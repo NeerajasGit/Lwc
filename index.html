@@ -8,10 +8,11 @@
 </head>
 <link>
     <link rel="stylesheet" href="stylesheet.css"></link>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script src="script.js"></script>
     <h1>Create Lead</h1>
     <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D5f000005WkEa" method="POST" onsubmit="beforesubmit()">
-    
+        <input type=hidden name='captcha_settings' value='{"keyname":"webtolead","fallback":"true","orgId":"00D5f000005WkEa","ts":""}'>
         <input type=hidden name="oid" value="00D5f000005WkEa">
         <input type=hidden name="retURL" value="https://neerajasgit.github.io/lwc/thanks.html">
         <input type=hidden name="Lead_Date__c" class="outputdate">
@@ -23,7 +24,8 @@
         <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" required="true"/><br>
         <label for="Lead_Date">Lead Date</label>
         <input type="Date" required="true" class="inputdate"/></span><br>
-        
+        <div class="g-recaptcha" data-sitekey="6LfUx6gpAAAAAFveRcofHWzvT6jRC70c1BuSb_z_"></div><br>
+
         <input type="submit" name="submit" class="submit">
         
         </form>
